@@ -1,0 +1,35 @@
+---
+import { Image } from "astro:assets";
+import type { ProjectType } from "../consts";
+
+interface Props {
+  project: ProjectType;
+}
+const { project } = Astro.props;
+---
+
+<div class="flex space-x-4">
+  <div class="pt-2">
+    <Image
+    src={project.image}
+    alt={project.desc}
+    height={384}
+    width={216}
+    class={"rounded border-2 border-slate-500/30"}
+    />
+  </div>
+  
+  <div class="space-y-2">
+    <span class="text-lg">{project.name}</span>
+    <p class="">{project.desc}</p>
+    <ul class="flex flex-wrap gap-2">
+      {
+        project.tech.map((item) => (
+          <li class="px-2 bg-blue-500 whitespace-nowrap rounded">
+            {item}
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</div>
