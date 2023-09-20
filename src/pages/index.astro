@@ -1,15 +1,19 @@
 ---
+import { getCollection } from "astro:content";
 import BaseHead from "../components/BaseHead.astro";
 import Footer from "../components/Footer.astro";
+import FormattedDate from "../components/FormattedDate.astro";
 import Header from "../components/Header.astro";
 import Intro from "../components/Intro.md";
 import Project from "../components/Project.astro";
 import {
-COUNTRIES_APP,
-DEV_NETWORK,
-SITE_DESCRIPTION,
-SITE_TITLE,
+  COUNTRIES_APP,
+  DEV_NETWORK,
+  SITE_DESCRIPTION,
+  SITE_TITLE,
 } from "../consts";
+
+const posts = await getCollection("blog");
 ---
 
 <!doctype html>
@@ -21,12 +25,33 @@ SITE_TITLE,
     <div class="mx-auto max-w-2xl space-y-8">
       <Header title={SITE_TITLE} />
       <main class="space-y-8">
-        <Intro />
-        <div class="space-y-4">
-          <h3 class="text-xl font-semibold">Projects</h3>
-          <Project project={DEV_NETWORK} />
-          <Project project={COUNTRIES_APP} />
+        <div
+          class="prose prose-p:text-slate-200 prose-a:text-slate-200 prose-a:no-underline prose-a:underline-offset-4 hover:prose-a:underline"
+        >
+          <Intro />
         </div>
+
+        <section>
+          <h3 class="text-xl my-2 font-semibold">Projects</h3>
+          <div class="space-y-10">
+            <Project project={DEV_NETWORK} />
+            <Project project={COUNTRIES_APP} />
+          </div>
+        </section>
+
+        <section>
+          <h3 class="text-xl my-2 font-semibold">Blog</h3>
+          {
+            posts.map((post) => (
+              <div class="mb-2 flex justify-between">
+                <span>{post.data.title}</span>
+                <span>
+                  <FormattedDate date={post.data.pubDate} />
+                </span>
+              </div>
+            ))
+          }
+        </section>
       </main>
       <Footer />
     </div>
