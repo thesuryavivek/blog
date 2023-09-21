@@ -16,7 +16,9 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 
   <body>
     <Header />
-    <main></main>
+    <main class="mx-auto prose">
+      <slot />
+    </main>
     <Footer />
   </body>
 </html>
