@@ -1,5 +1,7 @@
-Lorem ipsum - dolor sit amet consectetur adipisicing elit. Eaque, ea. Rerum
-consequatur necessitatibus earum, ipsam quaerat sit voluptas nemo optio
-pariatur saepe cupiditate nisi, commodi neque nulla ex debitis amet.
+Hey, I'm **Surya Vivek.** I'm a 20 y/o fullstack javascript developer from India.
+I'm passionate about building web applications and developer productivity.
+Currently, I'm actively exploring career opportunities.
 
-Find me on socials: [twitter](https://twitter.com/thesuryavivek) [github](https://github.com/thesuryavivek)
+Find me on socials:
+<a href="https://twitter.com/thesuryavivek" target="_blank">twitter</a>
+<a href="https://github.com/thesuryavivek" target="_blank">github</a>

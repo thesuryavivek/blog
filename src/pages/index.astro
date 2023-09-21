@@ -2,7 +2,6 @@
 import { getCollection } from "astro:content";
 import BaseHead from "../components/BaseHead.astro";
 import Footer from "../components/Footer.astro";
-import FormattedDate from "../components/FormattedDate.astro";
 import Header from "../components/Header.astro";
 import Intro from "../components/Intro.md";
 import Project from "../components/Project.astro";
@@ -21,18 +20,18 @@ const posts = await getCollection("blog");
   <head>
     <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
   </head>
-  <body class="p-8 font-body bg-slate-900 text-slate-200">
+  <body class="p-8 font-body bg-slate-900 text-slate-300 overflow-x-hidden">
     <div class="mx-auto max-w-2xl space-y-8">
       <Header title={SITE_TITLE} />
       <main class="space-y-8">
         <div
-          class="prose prose-p:text-slate-200 prose-a:text-slate-200 prose-a:no-underline prose-a:underline-offset-4 hover:prose-a:underline"
+          class="prose prose-invert prose-slate prose-a:no-underline prose-a:underline-offset-4 hover:prose-a:underline"
         >
           <Intro />
         </div>
 
-        <section>
-          <h3 class="text-xl my-2 font-semibold">Projects</h3>
+        <section id="projects">
+          <h3 class="text-xl my-2 font-semibold text-slate-100">Projects</h3>
           <div class="space-y-10">
             <Project project={DEV_NETWORK} />
             <Project project={COUNTRIES_APP} />
@@ -40,8 +39,10 @@ const posts = await getCollection("blog");
         </section>
 
         <section>
-          <h3 class="text-xl my-2 font-semibold">Blog</h3>
-          {
+          <h3 class="text-xl my-2 font-semibold">
+            Blog <small class="text-sm">Coming Soon</small>
+          </h3>
+          <!-- {
             posts.map((post) => (
               <div class="mb-2 flex justify-between">
                 <span>{post.data.title}</span>
@@ -50,7 +51,7 @@ const posts = await getCollection("blog");
                 </span>
               </div>
             ))
-          }
+          } -->
         </section>
       </main>
       <Footer />

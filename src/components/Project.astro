@@ -21,8 +21,8 @@ const { project } = Astro.props;
     </div>
 
     <div class="space-y-2">
-      <div class="flex items-center justify-between">
-        <span class="text-lg group-hover:text-slate-100">{project.name}</span>
+      <div class="flex items-center space-x-2">
+        <span class="text-lg text-slate-100">{project.name}</span>
 
         <!-- Arrow Icon -->
         <svg
@@ -31,18 +31,18 @@ const { project } = Astro.props;
           viewBox="0 0 24 24"
           stroke-width="1"
           stroke="currentColor"
-          width="18"
           height="18"
-          class="group-hover:stroke-blue-500 group-hover:-mt-1 duration-200 mr-8"
+          width="18"
+          class="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 duration-200"
         >
           <path
             stroke-linecap="round"
             stroke-linejoin="round"
-            d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"
-          ></path>
+            d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25"></path>
         </svg>
+
         <span
-          class="absolute -z-10 -inset-x-4 -inset-y-2 group-hover:bg-slate-50/10 rounded-md duration-300"
+          class="absolute -translate-x-1 translate-y-2 -z-10 -inset-4 group-hover:bg-slate-50/10 rounded-md duration-300"
         ></span>
       </div>
 
@@ -65,7 +65,7 @@ const { project } = Astro.props;
       width="18"
       height="18"
       fill="currentColor"
-      class="hover:fill-blue-500 hover:-mt-1 duration-200"
+      class="hover:-mt-1 duration-200"
       viewBox="0 0 16 16"
     >
       <path
