@@ -1,0 +1,14 @@
+packages:
+  - "."
+
+# pnpm >= 10.26 / 11+
+allowBuilds:
+  esbuild: true
+  sharp: true
+  workerd: true
+
+# older pnpm 10 (e.g. Cloudflare's build image)
+onlyBuiltDependencies:
+  - esbuild
+  - sharp
+  - workerd

@@ -1,18 +1,13 @@
-import mdx from '@astrojs/mdx';
-import sitemap from '@astrojs/sitemap';
-import tailwind from "@astrojs/tailwind";
-import { defineConfig } from 'astro/config';
-
-import vercel from "@astrojs/vercel/serverless";
+import mdx from "@astrojs/mdx";
+import sitemap from "@astrojs/sitemap";
+import tailwindcss from "@tailwindcss/vite";
+import { defineConfig } from "astro/config";
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://example.com',
-  integrations: [mdx(), sitemap(), tailwind()],
-  output: "server",
-  adapter: vercel({
-    webAnalytics: {
-      enabled: true
-    }
-  })
+  site: "https://example.com",
+  integrations: [mdx(), sitemap()],
+  vite: {
+    plugins: [tailwindcss()],
+  },
 });
